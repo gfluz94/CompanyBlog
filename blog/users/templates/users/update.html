@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div align="center">
+            <h1>Welcome to the page for {{current_user.username}}</h1>
+            <br>
+            <img class="logo" ng-src="/Users/gfluz94/Downloads/FlaskBootcamp/10_SocialCompanyBlog/blog/users/static/profile_pics/{{profile_image}}">
+            <br>
+        </div>
+            <form action="" method="POST" role="form" class="form" action="" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <div class="form-group  required">
+                    <label class="control-label" for="email">Email</label>
+                    {{ form.email(class="form-control",id="email",required="required",type="text",value="",placeholder="Enter email") }}
+                </div>
+                <div class="form-group  required">
+                    <label class="control-label" for="email">Profile Picture:</label>
+                    {{ form.picture(class="form-control") }}
+                </div>
+                <br>
+                {{ form.submit(class="btn btn-success") }}
+            </form>
+    </div>
+{% endblock %}

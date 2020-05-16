@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1>Updating post...</h1>
+        <br>
+        <form action="" method="POST" role="form" class="form">
+            {{ form.hidden_tag() }}
+            <div class="form-group  required">
+                <label class="control-label" for="title">Title Post</label>
+                {{ form.title(class="form-control",required="required", id="title", type="text",value="",placeholder="Enter title") }}
+            </div>
+            <div class="form-group  required">
+                <label class="control-label" for="text">Text</label>
+                {{ form.text(class="form-control",required="required",id="text", type="text",value="",placeholder="Enter post") }}
+            </div>
+            {{ form.submit(class="btn btn-success")}}
+        </form>
+    </div>
+{% endblock %}

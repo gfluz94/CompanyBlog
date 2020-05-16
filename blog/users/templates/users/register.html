@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1>Registration</h1>
+        <br>
+        <p>Please fill up the following fields:</p>
+        <br>
+        <form action="" method="POST" role="form" class="form">
+            {{ form.hidden_tag() }}
+            <div class="form-group  required">
+                <label class="control-label" for="email">Username</label>
+                {{ form.username(class="form-control",id="email",required="required",type="text",value="",placeholder="Enter username") }}
+            </div>
+            <div class="form-group  required">
+                <label class="control-label" for="email">Email</label>
+                {{ form.email(class="form-control",id="email",required="required",type="text",value="",placeholder="Enter email") }}
+            </div>
+            <div class="form-group  required">
+                <label class="control-label" for="password">Password</label>
+                {{ form.password(class="form-control",id="password",required="required",type="password",value="",placeholder="Enter password") }}
+            </div>
+            <div class="form-group  required">
+                <label class="control-label" for="password">Password Confirmation</label>
+                {{ form.confirm_pass(class="form-control",id="password",required="required",type="password",value="",placeholder="Enter password again") }}
+            </div>
+            {{ form.submit(class="btn btn-success")}}
+        </form>
+    </div>
+{% endblock %}
